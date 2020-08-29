@@ -96,7 +96,7 @@
 /*menu*/
 .menu {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #fff;
     opacity: 0;
     display:flex;
@@ -279,13 +279,14 @@
 
 .hero_main {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
     position: absolute;
-    top: 0%;
+    top: 0;
+    left: 0;
     z-index: 1;
     transition: all 1s;
 }
@@ -397,12 +398,12 @@
 }
 
 .samsung_video {
-    width: 665px;
-    height: 376px;
+    width: 649px;
+    height: 362px;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 45.9%;
-    left: 50%;
+    left: 50.3%;
     object-fit: fill;
 }
 
@@ -479,6 +480,27 @@
 }
 
 @media screen and (max-width:1000px) {
+
+    .header {
+        width: calc(100% - 40px);
+        margin: 20px 20px 0;
+    }
+
+    #logo_img {
+        width: 40px;
+        animation-name: none;
+    }
+
+    .slide_control {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .address {
+        left: 20px;
+        bottom: 20px;
+    }
+
     .hero_content {
         width: 100%;
         margin-left: 0;
@@ -511,8 +533,8 @@
     }
     
     .samsung_video {
-        width: 568px;
-        height: 320px;
+        width: 555px;
+        height: 307px;
     }
 
     .huge_img {
@@ -528,30 +550,61 @@
 }
 
 @media screen and (max-width:600px) {
+
+    .hero_main {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        transition: all 1s;
+    }
+
+    .hero_detail {
+        padding-bottom:40%;
+    }
+
+    .hero_main:nth-child(n+3) .hero_detail{
+        padding-bottom:32%;
+    }
+
+    .hero_detail h2 {
+        font-size: 36px;
+    }
+
+    .hero_detail h3 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .hero_detail :nth-child(n+3) {
+        margin-bottom: 3px;
+    }
+
+    .macbook_container, .monitor_container, .tv_container {
+        position: static;
+        transform: translate(0,0);
+    }
+
     .macbook_container {
-        width: 400px;
-        left: 50%;
-        top: 44%;
+        width: 90%;
+        margin-top: 40%;
+        margin-bottom: -14%;
     }
 
     .genesis_video {
-        width: 300px;
-        height: 190px;
-        left: 50%;
-        top: 47%;
+        display: none;
     }
 
     .monitor_container {
-        width: 400px;
-        top: 45%;
+        width: 90%;
+        margin-top: 40%;
+        margin-bottom: -14%;
     }
 
     .samsung_video {
-        width: 379px;
-        height: 214px;
+        display: none;
     }
 
     .huge_img {
-        width: 400px;
+        width: 90%;
     }
 }

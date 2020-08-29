@@ -62,7 +62,7 @@ function pageUp() {
 
 /*page down*/
 function pageDown() {
-    if (currentSlide == 5) {
+    if (currentSlide == 6) {
         heroMain[currentSlide].style = "top:0%";
     }
 
@@ -87,7 +87,7 @@ function pageDown() {
 
 function pageClick(num) {
     if(num == 0) {
-        for(i=0;i<5;i++){
+        for(i=0;i<6;i++){
             heroMain[i].style = "top:100%; opacity:0";
         }
         heroMain[0].style = "top:0%; opacity:1";
@@ -102,6 +102,7 @@ function pageClick(num) {
         heroMain[2].style = "top:100%; opacity:0";
         heroMain[3].style = "top:100%; opacity:0";
         heroMain[4].style = "top:100%; opacity:0";
+        eroMain[5].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
@@ -110,9 +111,10 @@ function pageClick(num) {
     else if(num == 2) {
         heroMain[0].style = "top:-100%; opacity:0";
         heroMain[1].style = "top:-100%; opacity:0";
-        heroMain[2].style = "top:0%; opacity:1";
-        heroMain[3].style = "top:100%; opacity:0";
+        heroMain[2].style = "top:-100%; opacity:0";
+        heroMain[3].style = "top:0%; opacity:1";
         heroMain[4].style = "top:100%; opacity:0";
+        heroMain[5].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
@@ -122,22 +124,24 @@ function pageClick(num) {
         heroMain[0].style = "top:-100%; opacity:0";
         heroMain[1].style = "top:-100%; opacity:0";
         heroMain[2].style = "top:-100%; opacity:0";
-        heroMain[3].style = "top:0%; opacity:1";
-        heroMain[4].style = "top:100%; opacity:0";
+        heroMain[3].style = "top:-100%; opacity:0";
+        heroMain[4].style = "top:0%; opacity:1";
+        heroMain[5].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorWhite();
         currentSlide = 4;
     }
-    else if(num == 4) {
+    
+    else if(num == 5) {
         for(i=0;i<5;i++){
             heroMain[i].style = "top:-100%; opacity:0";
         }
-        heroMain[4].style = "top:0%; opacity:1";
+        heroMain[5].style = "top:0%; opacity:1";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
-        currentSlide = 5;
+        currentSlide = 6;
     }
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
