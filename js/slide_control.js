@@ -7,9 +7,7 @@ var currentIndexNum = document.querySelector('#current_index_num');
 var heroMain = document.getElementsByClassName('hero_main');
 var slideNum = document.querySelector('.slide_num');
 var slideBorder = document.querySelector('.slide_border');
-var logoImg = document.querySelector('#logo_img');
 var menu = document.querySelector('.menu');
-var headerTxt = document.querySelector('#header_txt')
 var currentSlide = 1;
 
 function colorWhite() {
@@ -19,8 +17,6 @@ function colorWhite() {
     slideBorder="background-color:#fff";
     menuBtn.style = "background-color:#fff";
     addressBox.style = "color:#fff; border-color:#fff";
-    logoImg.src = "img/logo_white.svg";
-    headerTxt.style = "color:#fff; opacity:0.8";
 }
 
 function colorNone() {
@@ -30,8 +26,6 @@ function colorNone() {
     slideNum.style = "color:#222;";
     slideBorder="background-color:#222";
     menuBtn.style = "background-color:none";
-    logoImg.src = "img/logo_black.svg";
-    headerTxt.style = "color:#222; opacity:1";
 }
 
 /*page up*/
@@ -62,7 +56,7 @@ function pageUp() {
 
 /*page down*/
 function pageDown() {
-    if (currentSlide == 6) {
+    if (currentSlide == 5) {
         heroMain[currentSlide].style = "top:0%";
     }
 
@@ -87,7 +81,7 @@ function pageDown() {
 
 function pageClick(num) {
     if(num == 0) {
-        for(i=0;i<6;i++){
+        for(i=0;i<5;i++){
             heroMain[i].style = "top:100%; opacity:0";
         }
         heroMain[0].style = "top:0%; opacity:1";
@@ -102,7 +96,6 @@ function pageClick(num) {
         heroMain[2].style = "top:100%; opacity:0";
         heroMain[3].style = "top:100%; opacity:0";
         heroMain[4].style = "top:100%; opacity:0";
-        eroMain[5].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
@@ -111,10 +104,9 @@ function pageClick(num) {
     else if(num == 2) {
         heroMain[0].style = "top:-100%; opacity:0";
         heroMain[1].style = "top:-100%; opacity:0";
-        heroMain[2].style = "top:-100%; opacity:0";
-        heroMain[3].style = "top:0%; opacity:1";
+        heroMain[2].style = "top:0%; opacity:1";
+        heroMain[3].style = "top:100%; opacity:0";
         heroMain[4].style = "top:100%; opacity:0";
-        heroMain[5].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
@@ -124,24 +116,22 @@ function pageClick(num) {
         heroMain[0].style = "top:-100%; opacity:0";
         heroMain[1].style = "top:-100%; opacity:0";
         heroMain[2].style = "top:-100%; opacity:0";
-        heroMain[3].style = "top:-100%; opacity:0";
-        heroMain[4].style = "top:0%; opacity:1";
-        heroMain[5].style = "top:100%; opacity:0";
+        heroMain[3].style = "top:0%; opacity:1";
+        heroMain[4].style = "top:100%; opacity:0";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorWhite();
         currentSlide = 4;
     }
-    
-    else if(num == 5) {
+    else if(num == 4) {
         for(i=0;i<5;i++){
             heroMain[i].style = "top:-100%; opacity:0";
         }
-        heroMain[5].style = "top:0%; opacity:1";
+        heroMain[4].style = "top:0%; opacity:1";
         menu.style = "opacity:0; z-index:0;";
         currentIndexNum.innerHTML = `${num+1}`;
         colorNone();
-        currentSlide = 6;
+        currentSlide = 5;
     }
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
@@ -149,14 +139,9 @@ function pageClick(num) {
     console.log('click num' + currentSlide);
 }
 
-function reloadPage() {
-    location.reload();
-}
-
 function init() {
  slideUp.addEventListener('click',pageUp);
  slideDown.addEventListener('click',pageDown);
- logoImg.addEventListener('click',reloadPage);
 }
 
 init();
