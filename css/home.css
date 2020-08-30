@@ -398,12 +398,12 @@
 }
 
 .samsung_video {
-    width: 649px;
-    height: 362px;
+    width: 577px;
+    height: 326px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 45.9%;
-    left: 50.3%;
+    top: 43.4%;
+    left: 50.5%;
     object-fit: fill;
 }
 
@@ -558,13 +558,15 @@
         transition: all 1s;
     }
 
-    .hero_detail {
-        padding-bottom:40%;
+    .hero_content {
+        height: auto;
     }
 
-    .hero_main:nth-child(n+3) .hero_detail{
-        padding-bottom:32%;
+    .hero_detail {
+        padding-bottom:0;
     }
+
+    
 
     .hero_detail h2 {
         font-size: 36px;
@@ -586,8 +588,6 @@
 
     .macbook_container {
         width: 90%;
-        margin-top: 40%;
-        margin-bottom: -14%;
     }
 
     .genesis_video {
@@ -596,8 +596,6 @@
 
     .monitor_container {
         width: 90%;
-        margin-top: 40%;
-        margin-bottom: -14%;
     }
 
     .samsung_video {
@@ -606,5 +604,12 @@
 
     .huge_img {
         width: 90%;
+        position: static;
+        transform: translate(0,0);
     }
+
+    .hero_main:nth-child(4) .hero_detail {
+        padding-top: 44%;
+    }
+
 }
