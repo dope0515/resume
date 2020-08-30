@@ -567,14 +567,13 @@
         transition: all 1s;
     }
 
-    
-
     .hero_content {
         height: auto;
     }
 
     .hero_detail {
         padding-bottom:0;
+        margin-bottom: 0;
     }
 
     
