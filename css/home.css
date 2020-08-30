@@ -501,6 +501,14 @@
         bottom: 20px;
     }
 
+    .m_layout {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
     .hero_content {
         width: 100%;
         margin-left: 0;
@@ -509,7 +517,8 @@
     }
 
     .hero_detail {
-        padding-bottom: 166px;
+        margin-bottom: 166px;
+        padding: 0;
         text-align: center;
     }
 
@@ -533,8 +542,8 @@
     }
     
     .samsung_video {
-        width: 555px;
-        height: 307px;
+        width: 493px;
+        height: 280px;
     }
 
     .huge_img {
@@ -557,6 +566,8 @@
         align-items: center;
         transition: all 1s;
     }
+
+    
 
     .hero_content {
         height: auto;
