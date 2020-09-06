@@ -490,7 +490,11 @@
 
     #logo_img {
         width: 40px;
-        animation-name: none;
+    }
+
+    #logo_img:hover {
+        cursor: pointer;
+        width: 40px;
     }
 
     .slide_control {

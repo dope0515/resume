@@ -1,3 +1,4 @@
+/*variable*/
 var slideBody = document.querySelector('#slide_body');
 var slideUp = document.querySelector('.slide_up');
 var slideDown = document.querySelector('.slide_down');
@@ -8,23 +9,28 @@ var heroMain = document.getElementsByClassName('hero_main');
 var slideNum = document.querySelector('.slide_num');
 var slideBorder = document.querySelector('.slide_border');
 var menu = document.querySelector('.menu');
+var headerTxt = document.querySelector('#header_txt');
 var currentSlide = 1;
 
+/*make color white*/
 function colorWhite() {
     slideUp.style = "background-color:#fff;";
     slideDown.style = "background-color:#fff;";
     slideNum.style = "color:#fff;";
     slideBorder="background-color:#fff";
     menuBtn.style = "background-color:#fff";
+    headerTxt.style = "color:#fff";
     addressBox.style = "color:#fff; border-color:#fff";
 }
 
+/*make color basic*/
 function colorNone() {
     slideUp.style = "background-color:none;";
     slideDown.style = "background-color:none;";
     addressBox.style = "color:#222; border-color:#222";
     slideNum.style = "color:#222;";
     slideBorder="background-color:#222";
+    headerTxt.style = "color:#222";
     menuBtn.style = "background-color:none";
 }
 
@@ -79,6 +85,7 @@ function pageDown() {
     }
 }
 
+/*mobile menu move effect*/
 function pageClick(num) {
     if(num == 0) {
         for(i=0;i<5;i++){
@@ -139,9 +146,17 @@ function pageClick(num) {
     console.log('click num' + currentSlide);
 }
 
+/*reset slide index*/
+var logoImg = document.querySelector('#logo_img');
+
+function resetSlide() {
+    window.location.reload();
+}
+
 function init() {
  slideUp.addEventListener('click',pageUp);
  slideDown.addEventListener('click',pageDown);
+ logoImg.addEventListener('click',resetSlide);
 }
 
 init();
