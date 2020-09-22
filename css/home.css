@@ -40,7 +40,7 @@
     line-height: 1.4;
     color: #222;
     animation-name: txtmove;
-    animation-duration: 30s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -89,7 +89,7 @@
     }
 
     100% {
-        transform: translateX(-200%);
+        transform: translateX(-56%);
     }
 }
 

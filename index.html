@@ -3,7 +3,7 @@
     <title>Resume</title>
     <meta charset="UTF-8">
     <meta name="description" content="Resume">
-    <meta name="keywords" content="Resume, park_seung_joo,frontend,developer">
+    <meta name="keywords" content="Resume,park_seung_joo,publish,publisher,frontend,developer">
     <meta name="author" content="park_seung_joo">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -19,13 +19,14 @@
 </head>
 <body>
 
+<!--navigation-->
 <nav class="navigation">
     <ul class="header">
         <li class="header_logo">
             <img src="img/logo_black.svg" alt="logo_img" id="logo_img">
         </li>
         <li class="header_center">
-            <h4 id="header_txt">Experience never gets old. I want the connection, the excitement. I know there is a hole in my life,</h4>
+            <h4 id="header_txt">I want the connection, the excitement. I wanna be challenged. I can get along with anyone. and I'm here to learn about your world.</h4>
         </li>
         <li>
             <button class="menu_btn">
@@ -36,6 +37,7 @@
     </ul>
 </nav>
 
+<!--menu-->
 <ul class="menu">
     <li>
         <a onclick="pageClick(0)">
@@ -64,29 +66,31 @@
     </li>
 </ul>
 
-<div class="slide_control">
-    <ul class="slide_num">
-        <li class="slide_current_index">
+<!--slide control-->
+<ul class="slide_control">
+    <li class="slide_num">
+        <div class="slide_current_index">
             <span>0</span>
             <span id="current_index_num">1</span>
-        </li>
-        <li class="slide_border">
+        </div>
+        <div class="slide_border">
             
-        </li>
-        <li class="slide_index">
+        </div>
+        <div class="slide_index">
             <p>05</p>
-        </li>
-    </ul>
-    <div class="slide_btn">
+        </div>
+    </li>
+    <li class="slide_btn">
         <button class="slide_up">
             <span class="slide_up_arrow"></span>
         </button>
         <button class="slide_down">
             <span class="slide_down_arrow"></span>
         </button>
-    </div>
-</div>
+    </li>
+</ul>
 
+<!--address-->
 <address class="address">
     <p>Park SeungJoo</p>
     <div class="sns">
@@ -100,7 +104,7 @@
 
 <div id="slide_body">
 
-    <!--main section-->
+    <!--genesis section-->
     <section class="hero_main">
         <span class="m_layout">
         <div class="hero_content">
@@ -125,6 +129,8 @@
         </div>
     </span>
     </section>
+
+    <!--samsung section-->
     <section class="hero_main">
         <span class="m_layout">
         <div class="hero_content">
@@ -148,6 +154,8 @@
         </div>
     </span>
     </section>
+
+    <!--huge section-->
     <section class="hero_main">
         <span class="m_layout">
             <div class="hero_content">
@@ -168,6 +176,8 @@
             <img src="img/huge_content.png" alt="" class="huge_img">
     </span>
     </section>
+
+    <!--netflix section-->
     <section class="hero_main">
         <div class="hero_content">
             <div class="hero_detail">
@@ -189,10 +199,12 @@
             <video src="video/netflix_video.mp4" autoplay muted loop class="netflix_video"></video>
         </div>
     </section>
+
+    <!--flag game section-->
     <section class="hero_main">
         <span class="m_layout">
             <div class="hero_content">
-                <div class="hero_detail" style="--i:4">
+                <div class="hero_detail">
                     <h2>Flag-game</h2>
                     <h3>RESPONSIVE WEB SITE</h3>
                     <p>반응형 웹, 바닐라스크립트로 로직 구성</p>
@@ -212,6 +224,6 @@
 </div>    
 
 </body>
-<script src="js/slide_control.js"></script>
-<script src="js/menu.js"></script>
+<script src="js/slide_control.js"></script> <!--slide control JS-->
+<script src="js/menu.js"></script> <!--menu JS-->
 </html>
