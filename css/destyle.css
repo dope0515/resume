@@ -250,18 +250,6 @@ textarea {
   text-align: inherit;
 }
 
-[type='checkbox'] {
-  /* 1 */
-  -webkit-appearance: checkbox;
-  appearance: checkbox;
-}
-
-[type='radio'] {
-  /* 1 */
-  -webkit-appearance: radio;
-  appearance: radio;
-}
-
 /**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
