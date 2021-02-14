@@ -1,16 +1,16 @@
 /*variable*/
-const slideBody = document.querySelector('#slide_body');
-const slideUp = document.querySelector('.slide_up');
-const slideDown = document.querySelector('.slide_down');
-const addressBox = document.querySelector('.address');
-const menuBtn = document.querySelector('.menu_btn');
-const currentIndexNum = document.querySelector('#current_index_num');
-const heroMain = document.getElementsByClassName('hero_main');
-const slideNum = document.querySelector('.slide_num');
-const slideBorder = document.querySelector('.slide_border');
-const menu = document.querySelector('.menu');
-const headerTxt = document.querySelector('#header_txt');
-let currentSlide = 1;
+var slideBody = document.querySelector('#slide_body');
+var slideUp = document.querySelector('.slide_up');
+var slideDown = document.querySelector('.slide_down');
+var addressBox = document.querySelector('.address');
+var menuBtn = document.querySelector('.menu_btn');
+var currentIndexNum = document.querySelector('#current_index_num');
+var heroMain = document.getElementsByClassName('hero_main');
+var slideNum = document.querySelector('.slide_num');
+var slideBorder = document.querySelector('.slide_border');
+var menu = document.querySelector('.menu');
+var headerTxt = document.querySelector('#header_txt');
+var currentSlide = 1;
 
 /*make color white*/
 function colorWhite() {
