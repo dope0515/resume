@@ -1,7 +1,7 @@
-let menu = document.querySelector('.menu');
-let menuBtn = document.querySelector('.menu_btn');
-let menuLineTop = document.getElementById('menu_line_top');
-let menuLineBottom = document.getElementById('menu_line_bottom');
+const menu = document.querySelector('.menu');
+const menuBtn = document.querySelector('.menu_btn');
+const menuLineTop = document.getElementById('menu_line_top');
+const menuLineBottom = document.getElementById('menu_line_bottom');
 let menuState = 1;
 
 
