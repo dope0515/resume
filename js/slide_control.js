@@ -1,16 +1,16 @@
 /*variable*/
-var slideBody = document.querySelector('#slide_body');
-var slideUp = document.querySelector('.slide_up');
-var slideDown = document.querySelector('.slide_down');
-var addressBox = document.querySelector('.address');
-var menuBtn = document.querySelector('.menu_btn');
-var currentIndexNum = document.querySelector('#current_index_num');
-var heroMain = document.getElementsByClassName('hero_main');
-var slideNum = document.querySelector('.slide_num');
-var slideBorder = document.querySelector('.slide_border');
-var menu = document.querySelector('.menu');
-var headerTxt = document.querySelector('#header_txt');
-var currentSlide = 1;
+let slideBody = document.querySelector('#slide_body');
+let slideUp = document.querySelector('.slide_up');
+let slideDown = document.querySelector('.slide_down');
+let addressBox = document.querySelector('.address');
+let menuBtn = document.querySelector('.menu_btn');
+let currentIndexNum = document.querySelector('#current_index_num');
+let heroMain = document.getElementsByClassName('hero_main');
+let slideNum = document.querySelector('.slide_num');
+let slideBorder = document.querySelector('.slide_border');
+let menu = document.querySelector('.menu');
+let headerTxt = document.querySelector('#header_txt');
+let currentSlide = 1;
 
 /*make color white*/
 function colorWhite() {
