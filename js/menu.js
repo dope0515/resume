@@ -1,8 +1,8 @@
-var menu = document.querySelector('.menu');
-var menuBtn = document.querySelector('.menu_btn');
-var menuLineTop = document.getElementById('menu_line_top');
-var menuLineBottom = document.getElementById('menu_line_bottom');
-var menuState = 1;
+let menu = document.querySelector('.menu');
+let menuBtn = document.querySelector('.menu_btn');
+let menuLineTop = document.getElementById('menu_line_top');
+let menuLineBottom = document.getElementById('menu_line_bottom');
+let menuState = 1;
 
 
 function menuDisplayToggle() {
