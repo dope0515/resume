@@ -1,163 +1,84 @@
 /*variable*/
-var slideBody = document.querySelector('#slide_body');
-var slideUp = document.querySelector('.slide_up');
-var slideDown = document.querySelector('.slide_down');
-var addressBox = document.querySelector('.address');
-var menuBtn = document.querySelector('.menu_btn');
-var currentIndexNum = document.querySelector('#current_index_num');
-var heroMain = document.getElementsByClassName('hero_main');
-var slideNum = document.querySelector('.slide_num');
-var slideBorder = document.querySelector('.slide_border');
-var menu = document.querySelector('.menu');
-var headerTxt = document.querySelector('#header_txt');
-var currentSlide = 1;
+const slideBody = document.querySelector("#slide_body_container");
+const slideUp = document.querySelector('.slide_up');
+const slideDown = document.querySelector('.slide_down');
+const addressBox = document.querySelector('.address');
+const currentIndexNum = document.querySelector('#current_index_num');
+const heroMain = document.getElementsByClassName("hero_main");
+const slideNum = document.querySelector('.slide_num');
+const slideBorder = document.querySelector('.slide_border');
+const headerTxt = document.querySelector('#header_txt');
+let pagePercent = 0;
 
 /*make color white*/
 function colorWhite() {
-    slideUp.style = "background-color:#fff;";
-    slideDown.style = "background-color:#fff;";
-    slideNum.style = "color:#fff;";
-    slideBorder="background-color:#fff";
-    menuBtn.style = "background-color:#fff";
-    headerTxt.style = "color:#fff";
+    slideDown, slideUp, slideBorder.style = "background-color:#fff;";
+    headerTxt, slideNum.style = "color:#fff;";
     addressBox.style = "color:#fff; border-color:#fff";
 }
 
 /*make color basic*/
 function colorNone() {
-    slideUp.style = "background-color:none;";
-    slideDown.style = "background-color:none;";
+    slideDown, slideUp.style = "background-color:none;";
     addressBox.style = "color:#222; border-color:#222";
-    slideNum.style = "color:#222;";
-    slideBorder="background-color:#222";
-    headerTxt.style = "color:#222";
-    menuBtn.style = "background-color:none";
-}
-
-/*page up*/
-function pageUp() {
-    /*첫번째 페이지일 경우 작동 X*/
-    if (currentSlide == 1) {
-        heroMain[currentSlide-1].style = "top:0%";
-    }
-
-    else if (currentSlide == 5) {
-    currentSlide -= 1;
-    console.log("currentslide up" + currentSlide);
-    heroMain[currentSlide].style = "top:100%; opacity:0";
-    heroMain[currentSlide-1].style = "top:0%; opacity:1";
-    colorWhite();
-    currentIndexNum.innerHTML = `${currentSlide}`;
-    }
-
-    else {
-    currentSlide -= 1;
-    console.log("currentslide up" + currentSlide);
-    heroMain[currentSlide].style = "top:100%; opacity:0";
-    heroMain[currentSlide-1].style = "top:0%; opacity:1";
-    colorNone();
-    currentIndexNum.innerHTML = `${currentSlide}`;
-    }
+    headerTxt, slideNum.style = "color:#222;";
+    slideBorder.style="background-color:#222";
 }
 
 /*page down*/
 function pageDown() {
-    if (currentSlide == 5) {
-        heroMain[currentSlide].style = "top:0%";
+    pagePercent = pagePercent + 20;
+    slideBody.style = "transform: translateY(-"+ pagePercent +"%);";
+    currentIndexNum.innerHTML = `${pagePercent/20 + 1}`;
+    console.log(pagePercent);
+    if(pagePercent == 100) {
+        slideBody.style = "transform: translateY(-80%);";
+        pagePercent = 80;
+        currentIndexNum.innerHTML = `${5}`;
     }
-
-    else if (currentSlide == 3) {
-        heroMain[currentSlide].style = "top:0%; opacity:1";
-        heroMain[currentSlide-1].style = "top:-100%; opacity:0";
-        currentSlide += 1;
-        currentIndexNum.innerHTML = `${currentSlide}`;
+    else if (pagePercent == 60){
         colorWhite();
-        console.log("currentslide down"+currentSlide);
     }
+    else if (pagePercent != 60){
+        colorNone();
+    }  
+};
 
-    else {
-    heroMain[currentSlide].style = "top:0%; opacity:1";
-    heroMain[currentSlide-1].style = "top:-100%; opacity:0";
-    currentSlide += 1;
-    currentIndexNum.innerHTML = `${currentSlide}`;
-    colorNone();
-    console.log("currentslide down"+currentSlide);
+function pageUp() {
+    pagePercent = pagePercent - 20;
+    slideBody.style = "transform: translateY(-"+ pagePercent +"%);";
+    currentIndexNum.innerHTML = `${pagePercent/20 + 1}`;
+    console.log(pagePercent);
+    if(pagePercent == 0) {
+        slideBody.style = "transform: translateY(0%);"; 
     }
-}
+    else if (pagePercent < 0) {
+        pagePercent = 0;
+        currentIndexNum.innerHTML = `${1}`;
+    }
+    else if (pagePercent == 60){
+        colorWhite();
+    }
+    else if (pagePercent != 60){
+        colorNone();
+    } 
+    console.log(pagePercent);
+};
 
-/*mobile menu move effect*/
 function pageClick(num) {
-    if(num == 0) {
-        for(i=0;i<5;i++){
-            heroMain[i].style = "top:100%; opacity:0";
-        }
-        heroMain[0].style = "top:0%; opacity:1";
-        menu.style = "opacity:0; z-index:0;";
-        currentIndexNum.innerHTML = `${num+1}`;
-        colorNone();
-        currentSlide = 1;
-    }
-    else if(num == 1) {
-        heroMain[0].style = "top:-100%; opacity:0";
-        heroMain[1].style = "top:0%; opacity:1";
-        heroMain[2].style = "top:100%; opacity:0";
-        heroMain[3].style = "top:100%; opacity:0";
-        heroMain[4].style = "top:100%; opacity:0";
-        menu.style = "opacity:0; z-index:0;";
-        currentIndexNum.innerHTML = `${num+1}`;
-        colorNone();
-        currentSlide = 2;
-    }
-    else if(num == 2) {
-        heroMain[0].style = "top:-100%; opacity:0";
-        heroMain[1].style = "top:-100%; opacity:0";
-        heroMain[2].style = "top:0%; opacity:1";
-        heroMain[3].style = "top:100%; opacity:0";
-        heroMain[4].style = "top:100%; opacity:0";
-        menu.style = "opacity:0; z-index:0;";
-        currentIndexNum.innerHTML = `${num+1}`;
-        colorNone();
-        currentSlide = 3;
-    }
-    else if(num == 3) {
-        heroMain[0].style = "top:-100%; opacity:0";
-        heroMain[1].style = "top:-100%; opacity:0";
-        heroMain[2].style = "top:-100%; opacity:0";
-        heroMain[3].style = "top:0%; opacity:1";
-        heroMain[4].style = "top:100%; opacity:0";
-        menu.style = "opacity:0; z-index:0;";
-        currentIndexNum.innerHTML = `${num+1}`;
-        colorWhite();
-        currentSlide = 4;
-    }
-    else if(num == 4) {
-        for(i=0;i<5;i++){
-            heroMain[i].style = "top:-100%; opacity:0";
-        }
-        heroMain[4].style = "top:0%; opacity:1";
-        menu.style = "opacity:0; z-index:0;";
-        currentIndexNum.innerHTML = `${num+1}`;
-        colorNone();
-        currentSlide = 5;
-    }
+    const pagePoint = [0,20,40,60,80];
+    slideBody.style = "transform: translateY(-"+ pagePoint[num] +"%);";
+    menu.style = "opacity:0; z-index:0;";
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
+    currentIndexNum.innerHTML = `${num + 1}`
     menuState = 1;
-    console.log('click num' + currentSlide);
-}
+    pagePercent = pagePoint[num];
+};
 
-/*reset slide index*/
-var logoImg = document.querySelector('#logo_img');
+function remotePage(){
+    slideDown.addEventListener('click',pageDown);
+    slideUp.addEventListener('click',pageUp);
+};
 
-function resetSlide() {
-    window.location.reload();
-}
-
-function init() {
- slideUp.addEventListener('click',pageUp);
- slideDown.addEventListener('click',pageDown);
- logoImg.addEventListener('click',resetSlide);
-}
-
-init();
-console.log(currentSlide);
+remotePage();
