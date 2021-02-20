@@ -66,17 +66,19 @@ function pageUp() {
 };
 
 function pageClick(num) {
-    const pagePoint = [0,100,200,300,400];
-    slideBody.style = "transform: translateY(-"+ pagePoint[num] +"%);";
+    slideBody.style = "transform: translateY(-"+ num*100 +"%);";
     menu.style = "opacity:0; z-index:0;";
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
-    if(pagePoint[4]) {
+    if (num == 3){
         colorWhite();
+    }
+    else if (num != 3){
+        colorNone();
     } 
     currentIndexNum.innerHTML = `${num + 1}`
+    pagePercent = num*100;
     menuState = 1;
-    pagePercent = pagePoint[num];
 };
 
 function remotePage(){
