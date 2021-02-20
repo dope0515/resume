@@ -71,6 +71,9 @@ function pageClick(num) {
     menu.style = "opacity:0; z-index:0;";
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
+    if(pagePoint[4]) {
+        colorWhite();
+    } 
     currentIndexNum.innerHTML = `${num + 1}`
     menuState = 1;
     pagePercent = pagePoint[num];
