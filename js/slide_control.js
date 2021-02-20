@@ -27,27 +27,27 @@ function colorNone() {
 
 /*page down*/
 function pageDown() {
-    pagePercent = pagePercent + 20;
+    pagePercent = pagePercent + 100;
     slideBody.style = "transform: translateY(-"+ pagePercent +"%);";
-    currentIndexNum.innerHTML = `${pagePercent/20 + 1}`;
+    currentIndexNum.innerHTML = `${pagePercent/100 + 1}`;
     console.log(pagePercent);
-    if(pagePercent == 100) {
-        slideBody.style = "transform: translateY(-80%);";
-        pagePercent = 80;
+    if(pagePercent == 500) {
+        slideBody.style = "transform: translateY(-400%);";
+        pagePercent = 400;
         currentIndexNum.innerHTML = `${5}`;
     }
-    else if (pagePercent == 60){
+    else if (pagePercent == 300){
         colorWhite();
     }
-    else if (pagePercent != 60){
+    else if (pagePercent != 300){
         colorNone();
     }  
 };
 
 function pageUp() {
-    pagePercent = pagePercent - 20;
+    pagePercent = pagePercent - 100;
     slideBody.style = "transform: translateY(-"+ pagePercent +"%);";
-    currentIndexNum.innerHTML = `${pagePercent/20 + 1}`;
+    currentIndexNum.innerHTML = `${pagePercent/100 + 1}`;
     console.log(pagePercent);
     if(pagePercent == 0) {
         slideBody.style = "transform: translateY(0%);"; 
@@ -56,17 +56,17 @@ function pageUp() {
         pagePercent = 0;
         currentIndexNum.innerHTML = `${1}`;
     }
-    else if (pagePercent == 60){
+    else if (pagePercent == 300){
         colorWhite();
     }
-    else if (pagePercent != 60){
+    else if (pagePercent != 300){
         colorNone();
     } 
     console.log(pagePercent);
 };
 
 function pageClick(num) {
-    const pagePoint = [0,20,40,60,80];
+    const pagePoint = [0,100,200,300,400];
     slideBody.style = "transform: translateY(-"+ pagePoint[num] +"%);";
     menu.style = "opacity:0; z-index:0;";
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
