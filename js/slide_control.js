@@ -4,10 +4,7 @@ const slideUp = document.querySelector('.slide_up');
 const slideDown = document.querySelector('.slide_down');
 const addressBox = document.querySelector('.address');
 const currentIndexNum = document.querySelector('#current_index_num');
-const heroMain = document.getElementsByClassName("hero_main");
-const slideNum = document.querySelector('.slide_num');
-const slideBorder = document.querySelector('.slide_border');
-const headerTxt = document.querySelector('#header_txt');
+
 let pagePercent = 0;
 
 /*make color white*/
@@ -15,7 +12,7 @@ function colorWhite() {
     slideDown, slideUp, slideBorder.style = "background-color:#fff;";
     headerTxt, slideNum.style = "color:#fff;";
     addressBox.style = "color:#fff; border-color:#fff";
-}
+};
 
 /*make color basic*/
 function colorNone() {
@@ -23,7 +20,7 @@ function colorNone() {
     addressBox.style = "color:#222; border-color:#222";
     headerTxt, slideNum.style = "color:#222;";
     slideBorder.style="background-color:#222";
-}
+};
 
 /*page down*/
 function pageDown() {
@@ -35,13 +32,7 @@ function pageDown() {
         slideBody.style = "transform: translateY(-400%);";
         pagePercent = 400;
         currentIndexNum.innerHTML = `${5}`;
-    }
-    else if (pagePercent == 300){
-        colorWhite();
-    }
-    else if (pagePercent != 300){
-        colorNone();
-    }  
+    };
 };
 
 function pageUp() {
@@ -55,13 +46,7 @@ function pageUp() {
     else if (pagePercent < 0) {
         pagePercent = 0;
         currentIndexNum.innerHTML = `${1}`;
-    }
-    else if (pagePercent == 300){
-        colorWhite();
-    }
-    else if (pagePercent != 300){
-        colorNone();
-    } 
+    }; 
     console.log(pagePercent);
 };
 
@@ -70,13 +55,7 @@ function pageClick(num) {
     menu.style = "opacity:0; z-index:0;";
     menuLineTop.style = "top:30%;transform:rotate(0deg)";
     menuLineBottom.style = "bottom:30%;transform:rotate(0deg)";
-    if (num == 3){
-        colorWhite();
-    }
-    else if (num != 3){
-        colorNone();
-    } 
-    currentIndexNum.innerHTML = `${num + 1}`
+    currentIndexNum.innerHTML = `${num + 1}`;
     pagePercent = num*100;
     menuState = 1;
 };

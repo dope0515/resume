@@ -298,20 +298,19 @@
 }
 
 .hero_main:first-child {
-    background-image: url(../img/genesis.png);
+    background-image: url(../img/naver.png);
 }
 
 .hero_main:nth-child(2) {
-    background-image: url(../img/samsung.png);
+    background-image: url(../img/genesis.png);
 }
 
 .hero_main:nth-child(3) {
-    background-image: url(../img/huge.png);
+    background-image: url(../img/samsung.png);
 }
 
 .hero_main:nth-child(4) {
-    color: #fff;
-    background-image: url(../img/netflix.png);
+    background-image: url(../img/huge.png);
 }
 
 .hero_main:nth-child(5) {
@@ -361,6 +360,15 @@
     font-size: 14px;
     text-align: center;
     border: 1px solid #222;
+}
+
+.naver_img {
+    width: 50%;
+    position: absolute;
+    top: 46%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
 .mockup_img {
@@ -418,50 +426,34 @@
     transform: translate(-50%, -50%);
 }
 
-.tv_container {
-    width: 746px;
-    height: 235px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 13.6%;
-}
-
-
-.netflix_video {
-    width: 732px;
-    height: 413px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 145.2%;
-    left: 50.4%;
-    object-fit: fill;
-}
 
 /*media query*/
 @media screen and (max-width:1440px) {
 
     /*hero main*/
     .hero_main:first-child {
-        background-image: url(../img/bg_gray.png);
+        background-image: url(../img/bg_green.png);
     }
     
     .hero_main:nth-child(2) {
-        background-image: url(../img/bg_blue.png);
+        background-image: url(../img/bg_gray.png);
     }
     
     .hero_main:nth-child(3) {
-        background-image: url(../img/bg_pink.png);
+        background-image: url(../img/bg_blue.png);
     }
     
     .hero_main:nth-child(4) {
-        color: #fff;
-        background-image: url(../img/m-netflix3.png);
+        background-image: url(../img/bg_pink.png);
         background-position: center 30%;
     }
     
     .hero_main:nth-child(5) {
         background-image: url(../img/bg_purple.png);
+    }
+
+    .naver_img {
+        display: block;
     }
 
     .macbook_container {
@@ -552,6 +544,11 @@
         height: 280px;
     }
 
+    .naver_img {
+        top: 38%;
+        left: 50%;
+    }
+
     .huge_img {
         width: auto;
         top: 38%;
@@ -613,6 +610,10 @@
         width: 90%;
     }
 
+    .naver_img {
+        width: 68%;
+    }
+
     .genesis_video {
         display: none;
     }
@@ -629,6 +630,10 @@
         width: 90%;
         position: static;
         transform: translate(0,0);
+    }
+
+    .hero_main:first-child .hero_detail {
+        padding-top: 44%;
     }
 
     .hero_main:nth-child(4) .hero_detail {
