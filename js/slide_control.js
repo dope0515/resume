@@ -65,4 +65,16 @@ function remotePage(){
     slideUp.addEventListener('click',pageUp);
 };
 
+function wheelEvent() {
+    window.onmousewheel = function(e) {
+        if(e.wheelDelta === -120) {
+            pageDown();
+        }
+        else {
+            pageUp();
+        }
+    }
+}
+
+wheelEvent();
 remotePage();
