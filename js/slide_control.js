@@ -35,6 +35,7 @@ function pageDown() {
     };
 };
 
+/*page up*/
 function pageUp() {
     pagePercent = pagePercent - 100;
     slideBody.style = "transform: translateY(-"+ pagePercent +"%);";
@@ -50,6 +51,7 @@ function pageUp() {
     console.log(pagePercent);
 };
 
+/*page click*/
 function pageClick(num) {
     slideBody.style = "transform: translateY(-"+ num*100 +"%);";
     menu.style = "opacity:0; z-index:0;";
@@ -60,11 +62,13 @@ function pageClick(num) {
     menuState = 1;
 };
 
+/*remote page*/
 function remotePage(){
     slideDown.addEventListener('click',pageDown);
     slideUp.addEventListener('click',pageUp);
 };
 
+/*wheel event*/
 function wheelEvent() {
     window.onmousewheel = function(e) {
         if(e.wheelDelta === -120) {
