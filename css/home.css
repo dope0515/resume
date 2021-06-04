@@ -635,9 +635,4 @@
     .hero_main:first-child .hero_detail {
         padding-top: 44%;
     }
-
-    .hero_main:nth-child(4) .hero_detail {
-        padding-top: 44%;
-    }
-
 }
