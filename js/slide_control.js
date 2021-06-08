@@ -69,16 +69,24 @@ function remotePage(){
 };
 
 /*wheel event*/
-function wheelEvent() {
-    window.onmousewheel = function(e) {
-        if(e.wheelDelta === -120) {
-            pageDown();
-        }
-        else {
-            pageUp();
-        }
+window.onmousewheel = function(e) {
+    if(e.wheelDelta === -120) {//마우스 휠 아래로 할 떄 페이지 아래로 이동
+        pageDown();
     }
-}
+    else {
+        pageUp();
+    }
+};
 
-wheelEvent();
+/*keyboard event*/
+window.onkeydown = function(e) {
+    console.log(e.key)
+    if(e.key === "ArrowUp") {//화살표 위 누를 떄 페이지 위로 이동
+        pageUp();
+    }
+    else if (e.key === "ArrowDown") {//화살표 아래 누를 떄 페이지 아래로 이동
+        pageDown();
+    }
+};
+
 remotePage();
